@@ -14,7 +14,10 @@ import {
   Search,
   Settings,
   Star,
-  Users
+  Users,
+  Mail,
+  MessageCircle,
+  Smartphone
 } from "lucide-vue-next";
 
 import {
@@ -49,33 +52,58 @@ const mainNavItems = [
     icon: Contact,
   },
   {
-    title: "Campaigns",
-    url: "/campaigns",
-    icon: FolderIcon,
-    badge: "3",
+    title: "Campaigns Email",
+    url: "/campaigns/email",
+    icon: Mail,
     subItems: [
       {
         title: "All Campaigns",
-        url: "/campaigns",
+        url: "/campaigns/email",
       },
       {
         title: "Drafts",
-        url: "/campaigns/drafts",
+        url: "/campaigns/email/drafts",
         badge: "2",
       },
       {
         title: "Scheduled",
-        url: "/campaigns/scheduled",
+        url: "/campaigns/email/scheduled",
         badge: "1",
       },
       {
         title: "Sent",
-        url: "/campaigns/sent",
+        url: "/campaigns/email/sent",
       },
       {
         title: "Templates",
-        url: "/campaigns/templates",
+        url: "/campaigns/email/templates",
       },
+    ],
+  },
+  {
+    title: "Campaigns WhatsApp",
+    url: "/campaigns/whatsapp",
+    icon: Smartphone,
+    subItems: [
+      {
+        title: "All Campaigns",
+        url: "/campaigns/whatsapp",
+      },
+      {
+        title: "Templates",
+        url: "/campaigns/whatsapp/templates",
+      },
+    ],
+  },
+  {
+    title: "Campaigns SMS",
+    url: "/campaigns/sms",
+    icon: MessageCircle ,
+    subItems: [
+      {
+        title: "All Campaigns",
+        url: "/campaigns/sms",
+      }
     ],
   },
   {
@@ -148,7 +176,9 @@ const toolsNavItems = [
 
 // Expanded state for collapsible sections
 const expandedSections = ref({
-  campaigns: true,
+  'campaigns email': true,
+  'campaigns whatsapp': false,
+  'campaigns sms': false,
   subscribers: false,
   analytics: false,
 });
