@@ -2,6 +2,7 @@ import {createRouter, createWebHistory} from "vue-router";
 import Dashboard from "@/pages/Dashboard.vue";
 import DashboardLayout from "@/layouts/DashboardLayout.vue";
 import CampaingsPage from "@/pages/CampaingsPage.vue";
+import ContactPage from "@/pages/ContactPage.vue";
 
 const routes = [
     {
@@ -26,6 +27,13 @@ const routes = [
                 path: "campaigns",
                 name: "Campaigns",
                 component: CampaingsPage,
+                props: true,
+                //meta: { requiresAuth: true }
+            },
+            {
+                path: "contacts",
+                name: "contacts",
+                component: ContactPage,
                 props: true,
                 //meta: { requiresAuth: true }
             },

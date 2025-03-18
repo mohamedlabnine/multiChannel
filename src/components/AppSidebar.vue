@@ -4,6 +4,7 @@ import {
   BarChart3,
   Calendar,
   ChevronDown,
+  Contact,
   FolderIcon,
   GalleryVerticalEnd,
   Home,
@@ -41,6 +42,11 @@ const mainNavItems = [
     url: "/dashboard",
     icon: Home,
     isActive: true,
+  },
+  {
+    title: "Contacts",
+    url: "/contacts",
+    icon: Contact,
   },
   {
     title: "Campaigns",
