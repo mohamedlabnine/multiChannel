@@ -17,7 +17,9 @@ import {
   Users,
   Mail,
   MessageCircle,
-  Smartphone
+  Smartphone,
+  List,
+  Megaphone
 } from "lucide-vue-next";
 
 import {
@@ -45,6 +47,11 @@ const mainNavItems = [
     url: "/dashboard",
     icon: Home,
     isActive: true,
+  },
+  {
+    title: "Distribution Lists",
+    url: "/listes",
+    icon: List,
   },
   {
     title: "Contacts",
@@ -103,6 +110,17 @@ const mainNavItems = [
       {
         title: "All Campaigns",
         url: "/campaigns/sms",
+      }
+    ],
+  },
+  {
+    title: "Campaigns Marketing",
+    url: "/campaigns/ads",
+    icon: Megaphone ,
+    subItems: [
+      {
+        title: "All Campaigns",
+        url: "/campaigns/ads",
       }
     ],
   },
