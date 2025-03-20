@@ -8,6 +8,8 @@ import WhatsapCampagnesPage from "@/pages/campagnes/whatsapp/IndexPage.vue";
 import TemplatePage from "@/pages/campagnes/whatsapp/TemplatePage.vue";
 import ListePage from "@/pages/ListePage.vue";
 import AdsCampagnesPage from "@/pages/campagnes/ads/IndexPage.vue";
+import Conversation from "@/pages/chatBoot/Conversation.vue";
+import SmartDecideAI from "@/pages/SmartDecideAI.vue";
 
 
 const routes = [
@@ -75,6 +77,23 @@ const routes = [
                 path: "campaigns/ads",
                 name: "Campaigns_ads",
                 component: AdsCampagnesPage,
+                props: true,
+                //meta: { requiresAuth: true }
+            },
+
+            {
+                path: "chatBoot",
+                name: "chatBoot_conversations",
+                component: Conversation,
+                props: true,
+                //meta: { requiresAuth: true }
+            },
+
+
+            {
+                path: "smartDecideAI",
+                name: "SmartDecideAI",
+                component: SmartDecideAI,
                 props: true,
                 //meta: { requiresAuth: true }
             },

@@ -19,7 +19,9 @@ import {
   MessageCircle,
   Smartphone,
   List,
-  Megaphone
+  Megaphone,
+  Bot,
+  Brain
 } from "lucide-vue-next";
 
 import {
@@ -123,6 +125,16 @@ const mainNavItems = [
         url: "/campaigns/ads",
       }
     ],
+  },
+  {
+    title: "Chat Boot",
+    url: "/chatBoot",
+    icon: Bot,
+  },
+  {
+    title: "Smart Decide AI",
+    url: "/smartDecideAI",
+    icon: Brain,
   },
   {
     title: "Subscribers",
