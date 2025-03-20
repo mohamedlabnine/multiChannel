@@ -1,6 +1,53 @@
-# Vue 3 + TypeScript + Vite
+# Uml Conception
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+tools for build Uml : https://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
-"# multiChannel" 
+code :
+
+@startuml
+class Client {
+  +id: UUID
+  +name: string
+  +sender_id: string
+  +smtp_id: string
+  +wa_id: string
+}
+
+class AuthUser {
+  +id: UUID
+  +name: string
+  +prenom: string
+  +email: string
+  +password: string
+  +active: boolean
+  +role_id: UUID
+  +client_id: UUID
+
+}
+
+class AuthRole {
+  +id: UUID
+  +name: string
+}
+
+class Liste {
+  +id: UUID
+  +code: string
+  +name: string
+  +description: string
+}
+
+class Contact {
+  +id: UUID
+  +name: string
+  +phone: string
+  +email: string
+  +liste_id: UUID
+}
+
+
+
+AuthUser --> AuthRole : "a un"
+Contact --> Liste : "appartient à"
+
+@enduml
