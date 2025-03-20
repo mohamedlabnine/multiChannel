@@ -1,0 +1,94 @@
+
+
+@startuml
+
+class Client {
+  +id: UUID
+  +name: string
+  +sender_id: string
+  +smtp_id: string
+  +wa_id: string
+}
+
+class AuthUser {
+  +id: UUID
+  +name: string
+  +prenom: string
+  +email: string
+  +password: string
+  +active: boolean
+  +role_id: UUID
+  +client_id: UUID
+
+}
+
+class AuthRole {
+  +id: UUID
+  +name: string
+}
+
+class Liste {
+  +id: UUID
+  +code: string
+  +name: string
+  +description: string
+}
+
+class Contact {
+  +id: UUID
+  +name: string
+  +phone: string
+  +email: string
+  +liste_id: UUID
+}
+
+
+class Template {
+  +id: UUID
+  +name: string
+  +status_id: UUID
+  +content: text
+  +code: string
+  +categorie: string
+  +lang: string
+  +variables: json
+  +created_at: datetime
+  +updated_at: datetime
+}
+
+class Campagne {
+  +id: UUID
+  +titre: string
+  +template_id: UUID
+  +client_id: UUID
+  +user_id: UUID
+  +status_id: UUID
+  +date_send: datetime
+}
+
+class Reciver {
+  +id: UUID
+  +contact_id: UUID
+  +campagne_id: UUID
+  +status_id: UUID
+  +date_send: datetime
+  +delivered_at: datetime
+  +read_at: datetime
+  +failed_reason: text
+}
+
+class Status {
+  +id: UUID
+  +name: string
+  +code: string
+}
+
+Campagne --> Template : "utilise"
+Reciver --> Campagne : "relié à"
+Reciver --> Status : "a un"
+AuthUser --> AuthRole : "a un"
+Contact --> Liste : "appartient à"
+
+@enduml
+
+

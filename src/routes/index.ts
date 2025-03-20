@@ -10,14 +10,22 @@ import ListePage from "@/pages/ListePage.vue";
 import AdsCampagnesPage from "@/pages/campagnes/ads/IndexPage.vue";
 import Conversation from "@/pages/chatBoot/Conversation.vue";
 import SmartDecideAI from "@/pages/SmartDecideAI.vue";
+import LoginPage from "@/pages/LoginPage.vue";
 
 
 const routes = [
+    {
+        path: "/loginPage",
+        component: LoginPage,
+        name: "loginPage",
+        // meta: { requiresAuth: true }
+    },
     {
         path: "/",
         component: DashboardLayout,
         meta: { requiresAuth: true },
         children: [
+            
             {
                 path: "",
                 component: Dashboard,
